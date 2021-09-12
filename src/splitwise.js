@@ -149,6 +149,13 @@ const METHODS = {
       'category_id',
       'users',
       'split_equally',
+      [...Array(20).keys()].flatMap((index) => {
+        return [
+          `users__${index}__user_id`,
+          `users__${index}__paid_share`,
+          `users__${index}__owed_share`,
+        ]
+      }),
     ],
   },
   UPDATE_EXPENSE: {
